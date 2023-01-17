@@ -1,9 +1,23 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 //import Button from './Button'
+import "./style.css";
 
 let prevnmbr = '0';
 const Calculator = () => {
-  const [nmbr, setNmbr] = useState('');
+    const styles = {
+        oper: {
+          backgroundColor: "#A9A9A9",
+        },
+        oper2: {
+          backgroundColor: "#0000FF",
+          color: "white",
+        },
+        btn_clean: {
+          backgroundColor: "#FF0000",
+          color: "white",
+       },
+  };  
+  const [nmbr, setNmbr] = useState('0');
   const [lastop, setLastop] = useState('NA');  
   let r = 0;
   const addNmber = (e) => {
@@ -56,7 +70,7 @@ const Calculator = () => {
                     </div>                    
                 </td>
                 <td>
-                    <button class="btn_clean" onClick={clean_screen}>C</button>
+                    <button class="btn_clean" style={styles.btn_clean} onClick={clean_screen}>C</button>
                 </td>
             </tr>
             <tr>

@@ -1,6 +1,6 @@
 import Calculator from '../components/Calculator'
 
-const Home = ({ title, onAdd, showAdd }) => {
+const Home = () => {
     return (
       <div>
         Calculator

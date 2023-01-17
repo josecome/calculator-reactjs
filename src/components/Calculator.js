@@ -70,7 +70,7 @@ const Calculator = () => {
                     </div>                    
                 </td>
                 <td>
-                    <button class="btn_clean" style={styles.btn_clean} onClick={clean_screen}>C</button>
+                    <button className="btn_clean" style={styles.btn_clean} onClick={clean_screen}>C</button>
                 </td>
             </tr>
             <tr>
@@ -84,7 +84,7 @@ const Calculator = () => {
                     <button onClick={addNmber}>9</button>
                 </td>
                 <td>
-                    <button class="oper" onClick={addNmber}>/</button>
+                    <button className="oper" onClick={addNmber}>/</button>
                 </td>
             </tr>
             <tr>
@@ -98,7 +98,7 @@ const Calculator = () => {
                     <button onClick={addNmber}>6</button>
                 </td>
                 <td>
-                    <button class="oper" onClick={addNmber}>x</button>
+                    <button className="oper" onClick={addNmber}>x</button>
                 </td>
             </tr>
             <tr>
@@ -112,7 +112,7 @@ const Calculator = () => {
                     <button onClick={addNmber}>3</button>
                 </td>
                 <td>
-                    <button class="oper" onClick={addNmber}>-</button>
+                    <button className="oper" onClick={addNmber}>-</button>
                 </td>
             </tr>
             <tr>
@@ -123,10 +123,10 @@ const Calculator = () => {
                     <button onClick={addNmber}>.</button>
                 </td>
                 <td>
-                    <button class="oper2" onClick={addNmber}>=</button>
+                    <button className="oper2" onClick={addNmber}>=</button>
                 </td>
                 <td>
-                    <button class="oper" onClick={addNmber}>+</button>
+                    <button className="oper" onClick={addNmber}>+</button>
                 </td>
             </tr>
          </table>

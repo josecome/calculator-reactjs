@@ -63,6 +63,7 @@ const Calculator = () => {
  return (
     <div>
          <table>
+         <tbody>
             <tr>
             <td colSpan="3">
                     <div id="lbl">
@@ -129,8 +130,8 @@ const Calculator = () => {
                     <button className="oper" onClick={addNmber}>+</button>
                 </td>
             </tr>
-         </table>
-        
+            </tbody>
+         </table>        
     </div>
   ); 
 }

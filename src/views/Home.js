@@ -3,7 +3,7 @@ import Calculator from '../components/Calculator'
 const Home = () => {
     return (
       <div>
-        Calculator
+        <Calculator />
       </div>
     )
 } 

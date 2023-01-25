@@ -61,7 +61,7 @@ const Calculator = () => {
      setLastop('NA');
  }; 
  return (
-    <div>
+    <div style={{margin: 'auto' , width: '50%'}}>
          <table>
          <tbody>
             <tr>

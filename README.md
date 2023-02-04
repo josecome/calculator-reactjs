@@ -1,5 +1,7 @@
 # This is Calculator React App
 
+ <img src="public/Calculator.jpg">
+
 ### `npm start`
 
 Runs the app in the development mode.  

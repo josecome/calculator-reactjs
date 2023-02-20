@@ -87,6 +87,9 @@ const Calculator = () => {
                 <td>
                     <button className="oper" onClick={addNmber}>/</button>
                 </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>sin</button>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -101,6 +104,9 @@ const Calculator = () => {
                 <td>
                     <button className="oper" onClick={addNmber}>x</button>
                 </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>cons</button>
+                </td>                
             </tr>
             <tr>
                 <td>
@@ -115,6 +121,9 @@ const Calculator = () => {
                 <td>
                     <button className="oper" onClick={addNmber}>-</button>
                 </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>log</button>
+                </td>                
             </tr>
             <tr>
                 <td>
@@ -128,6 +137,9 @@ const Calculator = () => {
                 </td>
                 <td>
                     <button className="oper" onClick={addNmber}>+</button>
+                </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>ln</button>
                 </td>
             </tr>
             </tbody>

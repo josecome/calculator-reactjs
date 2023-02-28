@@ -1,6 +1,10 @@
 # This is Calculator React App
 
+Standard Calculator
  <img src="public/Calculator.jpg">
+
+Scientific Calculator
+ <img src="public/Scientific_Calculator.jpg"> 
 
 ### `npm start`
 

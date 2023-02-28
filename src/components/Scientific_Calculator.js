@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 //import Button from './Button'
 import "./style.css";
 
@@ -65,7 +65,7 @@ const Calculator = () => {
          <table>
          <tbody>
             <tr>
-            <td colSpan="3">
+            <td colSpan="5">
                     <div id="lbl">
                         <label>{nmbr}</label>
                     </div>                    
@@ -90,6 +90,9 @@ const Calculator = () => {
                 <td>
                     <button className="oper" onClick={addNmber}>sin</button>
                 </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>Pi</button>
+                </td>
             </tr>
             <tr>
                 <td>
@@ -106,7 +109,10 @@ const Calculator = () => {
                 </td>
                 <td>
                     <button className="oper" onClick={addNmber}>cons</button>
-                </td>                
+                </td>  
+                <td>
+                    <button className="oper" onClick={addNmber}>e</button>
+                </td>              
             </tr>
             <tr>
                 <td>
@@ -123,6 +129,9 @@ const Calculator = () => {
                 </td>
                 <td>
                     <button className="oper" onClick={addNmber}>log</button>
+                </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>Exp</button>
                 </td>                
             </tr>
             <tr>
@@ -140,6 +149,9 @@ const Calculator = () => {
                 </td>
                 <td>
                     <button className="oper" onClick={addNmber}>ln</button>
+                </td>
+                <td>
+                    <button className="oper" onClick={addNmber}>x!</button>
                 </td>
             </tr>
             </tbody>

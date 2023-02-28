@@ -9,6 +9,7 @@ const Header = ({ title, backGroundClr, changeBckg }) => {
           color={backGroundClr ? 'blue' : 'white'}
           text={backGroundClr ? 'Bckg White' : 'Bckg Blue'}
           onClick={changeBckg}
+          p={'left'}
         />
     </header>
   )

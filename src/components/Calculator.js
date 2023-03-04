@@ -19,6 +19,13 @@ const Calculator = () => {
   };  
   const [nmbr, setNmbr] = useState('0');
   const [lastop, setLastop] = useState('NA');  
+  useEffect(() => {
+       //console.log("nmbr: " + nmbr)
+       if(String(nmbr) === "NaN" || String(nmbr) === "Infinity") {
+          alert("Any number can't divide zero!");
+       }
+  }, [nmbr])
+
   let r = 0;
   const addNmber = (e) => {
     //console.log('L:' + lastop + ':');

@@ -67,6 +67,7 @@ const Calculator = () => {
      setNmbr('');
      setLastop('NA');
  }; 
+ const buttons_in_array = [[7, 8, 9, "/"], [4, 5, 6, "x"],[1, 2, 3, "-"], [0, ".", "=", "+"]];
  return (
     <div style={{margin: 'auto' , width: '50%'}}>
          <table>
@@ -81,62 +82,19 @@ const Calculator = () => {
                     <button className="btn_clean" style={styles.btn_clean} onClick={clean_screen}>C</button>
                 </td>
             </tr>
+            {
+            buttons_in_array.map((rows) => ( 
             <tr>
+                {
+                 rows.map((value) => ( 
                 <td>
-                    <button onClick={addNmber}>7</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>8</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>9</button>
-                </td>
-                <td>
-                    <button className="oper" onClick={addNmber}>/</button>
-                </td>
+                    <button onClick={addNmber}>{ value }</button>
+                </td>                    
+                 ))   
+                }
             </tr>
-            <tr>
-                <td>
-                    <button onClick={addNmber}>4</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>5</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>6</button>
-                </td>
-                <td>
-                    <button className="oper" onClick={addNmber}>x</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button onClick={addNmber}>1</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>2</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>3</button>
-                </td>
-                <td>
-                    <button className="oper" onClick={addNmber}>-</button>
-                </td>
-            </tr>
-            <tr>
-                <td>
-                    <button onClick={addNmber}>0</button>
-                </td>
-                <td>
-                    <button onClick={addNmber}>.</button>
-                </td>
-                <td>
-                    <button className="oper2" onClick={addNmber}>=</button>
-                </td>
-                <td>
-                    <button className="oper" onClick={addNmber}>+</button>
-                </td>
-            </tr>
+            ))
+            }
             </tbody>
          </table>        
     </div>

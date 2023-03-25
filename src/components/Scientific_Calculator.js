@@ -21,7 +21,8 @@ const Calculator = () => {
   const [lastop, setLastop] = useState('NA');  
   let r = 0;
   const addNmber = (e) => {
-    if("=" === e.target.innerHTML){
+    var targetedVal = e.target.innerHTML;
+    if("=" === targetedVal){
      if(lastop === "NA"){
          return;
      } else{
@@ -52,24 +53,24 @@ const Calculator = () => {
      prevnmbr = '';
      return;
     }
-    if("x!" === e.target.innerHTML){
+    if("x!" === targetedVal){
       console.log("Value: " + nmbr)
       setNmbr(calc_factorial(nmbr));
       console.log("Value2: " + nmbr)
       return;
-    } else if(e.target.innerHTML === "pi") {
+    } else if(targetedVal === "pi") {
           setNmbr("" + 3.141592653589793238);             
-    } else if(e.target.innerHTML === "e") {
+    } else if(targetedVal === "e") {
           setNmbr("" + 2.7182818);             
-    } else if (!["=", "/", "+", "-", "x", "exp", "sin", "cos", "tan"].includes(e.target.innerHTML)){ 
-        setNmbr("" + nmbr + e.target.innerHTML);
+    } else if (!["=", "/", "+", "-", "x", "exp", "sin", "cos", "tan"].includes(targetedVal)){ 
+        setNmbr("" + nmbr + targetedVal);
     } else {
-        if(e.target.innerHTML === "pi" || e.target.innerHTML === "e") {
+        if(targetedVal === "pi" || targetedVal === "e") {
             return;
         }
         prevnmbr = nmbr; 
         setNmbr('');
-        setLastop(e.target.innerHTML);
+        setLastop(targetedVal);
     }
   };
   const clean_screen = () => {
@@ -90,7 +91,11 @@ const Calculator = () => {
  };
  const calculateSinCosTan = (oper, value) => {
   if (value > 90) {
-      value = value % 90; 
+      value = value % 90;
+  }
+  if(![30, 45, 60].includes(value)){
+    alert("Choose number that is 30 or 45 or 60 or multiple that when devide 90 the result match one of the value given");
+    return value;
   }
   var _30 = sin_cos_tan_notable_values[0];
   var _45 = sin_cos_tan_notable_values[1];

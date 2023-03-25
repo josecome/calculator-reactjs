@@ -28,8 +28,8 @@ const Calculator = () => {
 
   let r = 0;
   const addNmber = (e) => {
-    //console.log('L:' + lastop + ':');
-    if("=" === e.target.innerHTML){
+    var targetedVal = e.target.innerHTML;
+    if("=" === targetedVal){
      if(lastop === "NA"){
          return;
      } else{
@@ -52,14 +52,14 @@ const Calculator = () => {
      prevnmbr = '';
      return;
     } 
-    if (!("=/+-x").includes(e.target.innerHTML)){ 
-     setNmbr("" + nmbr + e.target.innerHTML);
+    if (!["=", "/", "+", "-", "x"].includes(targetedVal)){ 
+     setNmbr("" + nmbr + targetedVal);
      console.log("N: " + nmbr)
     } else {
      prevnmbr = nmbr; 
      setNmbr('');
-     setLastop(e.target.innerHTML);
-     console.log("O: " + prevnmbr + ',' + e.target.innerHTML)
+     setLastop(targetedVal);
+     console.log("O: " + prevnmbr + ',' + targetedVal)
     }
   };
   const clean_screen = () => {

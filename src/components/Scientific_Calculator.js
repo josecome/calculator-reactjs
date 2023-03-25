@@ -60,6 +60,17 @@ const Calculator = () => {
      setNmbr('');
      setLastop('NA');
  }; 
+ const factorial = (y) => {var f = 1; for(var i = y; i >= 1; i--){f = f * i;/* console.log(i); */} return f},
+ const calc_factorial = (n) => {
+     return n > 1 ? this.factorial(n) : n;
+ };
+ const ExponetialOfNumber = (v1, v2) => {
+    var v_result = 1; 
+    for(var i = 0; i < Number(v2); i++){
+        v_result = v_result * v1; 
+    }
+    return v_result;
+ };
  const buttons_in_array = [[7, 8, 9, "/", "sin", "Pi"], [4, 5, 6, "x", "cons", "e"],[1, 2, 3, "-", "log", "Exp"], [0, ".", "=", "+", "ln", "x!"]];
  return (
     <div style={{margin: 'auto' , width: '50%'}}>

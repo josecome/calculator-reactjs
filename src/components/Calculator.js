@@ -84,10 +84,10 @@ const Calculator = () => {
             </tr>
             {
             buttons_in_array.map((rows) => ( 
-            <tr>
-                {
-                 rows.map((value) => ( 
-                <td>
+            <tr key={buttons_in_array.indexOf(rows)}>
+              {
+                rows.map((value) => ( 
+                <td key={rows.indexOf(value)}>
                     <button onClick={addNmber}>{ value }</button>
                 </td>                    
                  ))   

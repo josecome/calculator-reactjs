@@ -21,7 +21,6 @@ const Calculator = () => {
   const [lastop, setLastop] = useState('NA');  
   let r = 0;
   const addNmber = (e) => {
-    //console.log('L:' + lastop + ':');
     if("=" === e.target.innerHTML){
      if(lastop === "NA"){
          return;
@@ -40,8 +39,14 @@ const Calculator = () => {
          } else if(lastop === "x"){
             r = Number(prevnmbr) * Number(nmbr);
             setNmbr('' + r)
-         } else if(lastop === "Exp"){
+         } else if(lastop === "exp"){
             setNmbr(ExponetialOfNumber(prevnmbr, nmbr));
+         } else if(lastop === "sin"){
+            setNmbr(calculateSinCosTan('sin', prevnmbr));
+         } else if(lastop === "cos"){
+            setNmbr(calculateSinCosTan('cos', prevnmbr));
+         } else if(lastop === "tan"){
+            setNmbr(calculateSinCosTan('tan', prevnmbr));
          } 
      }
      prevnmbr = '';
@@ -52,14 +57,14 @@ const Calculator = () => {
       setNmbr(calc_factorial(nmbr));
       console.log("Value2: " + nmbr)
       return;
-    } else if(e.target.innerHTML === "Pi") {
+    } else if(e.target.innerHTML === "pi") {
           setNmbr("" + 3.141592653589793238);             
     } else if(e.target.innerHTML === "e") {
           setNmbr("" + 2.7182818);             
-    } else if (!("=/+-xExp").includes(e.target.innerHTML)){ 
+    } else if (!["=", "/", "+", "-", "x", "exp", "sin", "cos", "tan"].includes(e.target.innerHTML)){ 
         setNmbr("" + nmbr + e.target.innerHTML);
     } else {
-        if(e.target.innerHTML === "Pi") {
+        if(e.target.innerHTML === "pi" || e.target.innerHTML === "e") {
             return;
         }
         prevnmbr = nmbr; 
@@ -83,7 +88,31 @@ const Calculator = () => {
     }
     return v_result;
  };
- const buttons_in_array = [[7, 8, 9, "/", "sin", "Pi"], [4, 5, 6, "x", "cons", "e"],[1, 2, 3, "-", "log", "Exp"], [0, ".", "=", "+", "ln", "x!"]];
+ const calculateSinCosTan = (oper, value) => {
+  if (value > 90) {
+      value = value % 90; 
+  }
+  var _30 = sin_cos_tan_notable_values[0];
+  var _45 = sin_cos_tan_notable_values[1];
+  var _60 = sin_cos_tan_notable_values[2];
+  
+  if(value === 30) {
+    if(oper === "sin") { return _30[1]} 
+    else if(oper === "cos") {return _45[2]} 
+    else if(oper === "tan") {return _60[3]}
+  } else if(value === 45) {
+    if(oper === "sin") { return _30[1]} 
+    else if(oper === "cos") {return _45[2]} 
+    else if(oper === "tan") {return _60[3]}
+  } else if(value === 60) {
+    if(oper === "sin") { return _30[1]} 
+    else if(oper === "cos") {return _45[2]} 
+    else if(oper === "tan") {return _60[3]}
+  }   
+  return value;
+};
+ const buttons_in_array = [[7, 8, 9, "/", "sin", "pi"], [4, 5, 6, "x", "cos", "e"],[1, 2, 3, "-", "log", "exp"], [0, ".", "=", "+", "ln", "x!"]];
+ const sin_cos_tan_notable_values = [[30, 0.5, 0.866, 0.5773], [45, 0.707, 0.707, 1], [60, 0.866, 0.5, 1.732]];
  return (
     <div style={{margin: 'auto' , width: '50%'}}>
          <table>
@@ -100,12 +129,12 @@ const Calculator = () => {
             </tr>
             {
             buttons_in_array.map((rows) => ( 
-            <tr>
+            <tr key={buttons_in_array.indexOf(rows)}>
                 {
-                 rows.map((value) => ( 
-                <td>
+                  rows.map((value) => ( 
+                  <td key={rows.indexOf(value)}>
                     <button onClick={addNmber}>{ value }</button>
-                </td>                    
+                  </td>                    
                  ))   
                 }
             </tr>

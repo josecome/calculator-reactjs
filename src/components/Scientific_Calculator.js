@@ -40,19 +40,31 @@ const Calculator = () => {
          } else if(lastop === "x"){
             r = Number(prevnmbr) * Number(nmbr);
             setNmbr('' + r)
-         }
+         } else if(lastop === "Exp"){
+            setNmbr(ExponetialOfNumber(prevnmbr, nmbr));
+         } 
      }
      prevnmbr = '';
      return;
-    } 
-    if (!("=/+-x").includes(e.target.innerHTML)){ 
-     setNmbr("" + nmbr + e.target.innerHTML);
-     console.log("N: " + nmbr)
+    }
+    if("x!" === e.target.innerHTML){
+      console.log("Value: " + nmbr)
+      setNmbr(calc_factorial(nmbr));
+      console.log("Value2: " + nmbr)
+      return;
+    } else if(e.target.innerHTML === "Pi") {
+          setNmbr("" + 3.141592653589793238);             
+    } else if(e.target.innerHTML === "e") {
+          setNmbr("" + 2.7182818);             
+    } else if (!("=/+-xExp").includes(e.target.innerHTML)){ 
+        setNmbr("" + nmbr + e.target.innerHTML);
     } else {
-     prevnmbr = nmbr; 
-     setNmbr('');
-     setLastop(e.target.innerHTML);
-     console.log("O: " + prevnmbr + ',' + e.target.innerHTML)
+        if(e.target.innerHTML === "Pi") {
+            return;
+        }
+        prevnmbr = nmbr; 
+        setNmbr('');
+        setLastop(e.target.innerHTML);
     }
   };
   const clean_screen = () => {
@@ -60,9 +72,9 @@ const Calculator = () => {
      setNmbr('');
      setLastop('NA');
  }; 
- const factorial = (y) => {var f = 1; for(var i = y; i >= 1; i--){f = f * i;/* console.log(i); */} return f},
+ const factorial = (y) => {var f = 1; for(var i = y; i >= 1; i--){f = f * i;/* console.log(i); */} return f};
  const calc_factorial = (n) => {
-     return n > 1 ? this.factorial(n) : n;
+     return n > 1 ? factorial(n) : n;
  };
  const ExponetialOfNumber = (v1, v2) => {
     var v_result = 1; 

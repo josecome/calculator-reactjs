@@ -1,10 +1,11 @@
 import { useState } from 'react';
-//import Button from './Button'
+import Label from './Label'
+import Button from './Button'
 import "./style.css";
 
 let prevnmbr = '0';
 const Calculator = () => {
-    const styles = {
+    /*const styles = {
         oper: {
           backgroundColor: "#A9A9A9",
         },
@@ -16,7 +17,7 @@ const Calculator = () => {
           backgroundColor: "#FF0000",
           color: "white",
        },
-  };  
+  }; */ 
   const [nmbr, setNmbr] = useState('0');
   const [lastop, setLastop] = useState('NA');  
   let r = 0;
@@ -123,13 +124,18 @@ const Calculator = () => {
          <table>
          <tbody>
             <tr>
-            <td colSpan="5">
-                    <div id="lbl">
-                        <label>{nmbr}</label>
-                    </div>                    
+                <td colSpan="5">
+                    <Label 
+                      text={ nmbr }
+                    />                 
                 </td>
                 <td>
-                    <button className="btn_clean" style={styles.btn_clean} onClick={clean_screen}>C</button>
+                    <Button
+                        color={'#FF0000'}
+                        text={'C'}
+                        onClick={clean_screen}
+                        class_name={'btn'}
+                    />
                 </td>
             </tr>
             {
@@ -138,7 +144,12 @@ const Calculator = () => {
                 {
                   rows.map((value) => ( 
                   <td key={rows.indexOf(value)}>
-                    <button onClick={addNmber}>{ value }</button>
+                    <Button
+                        color={'rgba(51, 51, 51, 0.05)'}
+                        text={value}
+                        onClick={addNmber}
+                        class_name={'btn2'}
+                    />      
                   </td>                    
                  ))   
                 }
